@@ -6,5 +6,12 @@ templateUrl:'./server.component.html'
 })
 
 export class ServerComponent{
+    serverId:number = 10;
+    serverStatus:string = 'online';
 
+    
+getServerStatus(){
+
+    return this.serverStatus;
+}
 }
