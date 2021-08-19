@@ -1,4 +1,6 @@
+import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-servers',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer=false;
-  serverCreationStatus='No server created!!'
+  serverCreationStatus='No server created!!';
+  serverName= 'TestServer';
+  userName='';
 
   constructor() { 
     setTimeout(() => {
@@ -19,7 +23,14 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer(){
-    this.serverCreationStatus='Server created!!!'
+    this.serverCreationStatus='Server created!!! Name of server is' + this.serverName
   }
+  // onAddUser(){
+  //   this.userName='name of user is ' + this.userName;
+  //   this.userName=''
+  // }                      Assignment2
 
+    onUpdateServerName(event:Event ){
+      this.serverName=(<HTMLInputElement>event.target).value;
+    }
 }
